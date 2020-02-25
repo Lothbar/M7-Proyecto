@@ -11,20 +11,20 @@ import android.widget.TextView;
 
 public class listaralumnos extends AppCompatActivity {
 
+    String [] array_nombres;
+    int [] array_nota1;
+    int [] array_nota2;
+    int [] array_nota3;
+    int contador;
+    String cadena_nombres="";
+    String cadena_nota1="";
+    String cadena_nota2="";
+    String cadena_nota3="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listaralumnos);
-
-        String [] array_nombres;
-        int [] array_nota1;
-        int [] array_nota2;
-        int [] array_nota3;
-        int contador;
-        String cadena_nombres="";
-        String cadena_nota1="";
-        String cadena_nota2="";
-        String cadena_nota3="";
 
         Intent recibedatos = getIntent();
         array_nombres = recibedatos.getStringArrayExtra("go_arraynombres");
