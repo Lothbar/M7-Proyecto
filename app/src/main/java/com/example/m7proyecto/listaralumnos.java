@@ -28,6 +28,16 @@ public class listaralumnos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listaralumnos);
 
+        String [] array_nombres;
+        int [] array_nota1;
+        int [] array_nota2;
+        int [] array_nota3;
+        int contador;
+        String cadena_nombres="";
+        String cadena_nota1="";
+        String cadena_nota2="";
+        String cadena_nota3="";
+
         Intent recibedatos = getIntent();
         array_nombres = recibedatos.getStringArrayExtra("go_arraynombres");
         array_nota1 = recibedatos.getIntArrayExtra("go_arraynota1" );
@@ -39,6 +49,27 @@ public class listaralumnos extends AppCompatActivity {
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, array_nombres/*,array_nota1,array_notan*/);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager((this)));
+
+        TextView resultado = findViewById(R.id.nombres_lista);
+        for (int i = 0 ; i < contador ; i++) {
+            cadena_nombres = cadena_nombres + array_nombres[i];
+        }
+        TextView resultado1 = findViewById(R.id.nota1_lista);
+        for (int i = 0 ; i < contador ; i++) {
+            cadena_nota1 = cadena_nota1 + array_nota1[i];
+        }
+        TextView resultado2 = findViewById(R.id.nota2_lista);
+        for (int i = 0 ; i < contador ; i++) {
+            cadena_nota2 = cadena_nota2 + array_nota2[i];
+        }
+        TextView resultado3 = findViewById(R.id.nota3_lista);
+        for (int i = 0 ; i < contador ; i++){
+            cadena_nota3 = cadena_nota3+array_nota3[i];
+        }
+        resultado.setText(cadena_nombres);
+        resultado1.setText(cadena_nota1);
+        resultado2.setText(cadena_nota2);
+        resultado3.setText(cadena_nota3);
 
     }
 }

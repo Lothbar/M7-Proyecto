@@ -76,12 +76,11 @@ public class inicio extends AppCompatActivity {
     private void aprobado_general(){
 
         Intent intent_aprobado = new Intent(this, aprobado.class);
-        intent_aprobado.putExtra("o_arraynota1",array_nota1);
+        intent_aprobado.putExtra("go_arraynota1",array_nota1);
         intent_aprobado.putExtra("go_arraynota2", array_nota2);
         intent_aprobado.putExtra("go_arraynota3", array_nota3);
         intent_aprobado.putExtra("go_contador", contador);
         startActivityForResult(intent_aprobado, 2);
-
     }
 
     private void hilp(){
