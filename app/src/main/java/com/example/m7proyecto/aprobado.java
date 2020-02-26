@@ -41,6 +41,7 @@ public class aprobado extends AppCompatActivity {
                 notas_buenas.putExtra( "go_arraynota1", array_nota1);
                 notas_buenas.putExtra( "go_arraynota2", array_nota2);
                 notas_buenas.putExtra( "go_arraynota3", array_nota3);
+                setResult(RESULT_OK, notas_buenas);
 
                 TextView aprueban = findViewById(R.id.comprueba_nota);
                 aprueban.setText(array_nota1[0]);

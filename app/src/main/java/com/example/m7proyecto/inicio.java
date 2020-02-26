@@ -75,13 +75,12 @@ public class inicio extends AppCompatActivity {
 
     private void aprobado_general(){
 
-        Intent intent_introducir = new Intent(this, aprobado.class);
-        intent_introducir.putExtra("o_arraynota1",array_nota1);
-        intent_introducir.putExtra("go_arraynota2", array_nota2);
-        intent_introducir.putExtra("go_arraynota3", array_nota3);
-        intent_introducir.putExtra("go_contador", contador);
-        startActivityForResult(intent_introducir, 1);
-
+        Intent intent_aprobado = new Intent(this, aprobado.class);
+        intent_aprobado.putExtra("go_arraynota1",array_nota1);
+        intent_aprobado.putExtra("go_arraynota2", array_nota2);
+        intent_aprobado.putExtra("go_arraynota3", array_nota3);
+        intent_aprobado.putExtra("go_contador", contador);
+        startActivityForResult(intent_aprobado, 2);
     }
 
     private void hilp(){
@@ -101,6 +100,15 @@ public class inicio extends AppCompatActivity {
 
                 TextView Texto = findViewById(R.id.prueba);
                 Texto.setText(array_nombres[0]);
+            }
+
+            if(requestCode == 2){
+                if (resultCode == RESULT_OK) {
+                    array_nota1 = data.getIntArrayExtra("array_nota1");
+                    array_nota2 = data.getIntArrayExtra("array_nota2");
+                    array_nota3 = data.getIntArrayExtra("array_nota3");
+                    contador = data.getIntExtra("go_contador", 0);
+                }
             }
         }
     }
